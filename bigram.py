@@ -56,12 +56,14 @@ def generateText(wordMap, destination, size):
         if prev_1 == None:
           # If no prev word, pick a proper random first word.
           curr = getFirstWord(wordMap)
+          print curr,
+          f.write(' ' + curr)
         else:
           # based on the previous word, pick the next word from the list of probables
           prev = random.choice(wordMap[prev_1].keys())
           curr = random.choice(wordMap[prev_1][prev])
-        print prev, curr,
-        f.write(' ' + prev + ' ' + curr)
+          print prev, curr,
+          f.write(' ' + prev + ' ' + curr)
         prev_1 = curr
         
       except:
